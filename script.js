@@ -9,8 +9,9 @@ searchBtn.addEventListener('click', getMealList);
 
 function getMealList() {
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    console.log(searchInputTxt);
-    fetch('https://ptf-web-dizajn-2022.azurewebsites.net/api/Food')
+    fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`, {
+            method: 'GET',
+        })
         .then(response => response.json())
         .then(data => {
             console.log(data);
