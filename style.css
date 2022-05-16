@@ -148,6 +148,82 @@ body {
 }
 
 
+/* meal details */
+
+.meal-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: var(--tenne-tawny);
+    border-radius: 1rem;
+    width: 70%;
+    height: 70%;
+    overflow-y: scroll;
+    display: ;
+    padding: 2rem 0;
+}
+
+.meal-details::-webkit-scrollbar {
+    background: #f0f0f0;
+    border-radius: 2rem;
+}
+
+
+/* js related */
+
+.showDetails {
+    display: block;
+}
+
+.meal-details-content {
+    margin: 2rem;
+}
+
+.meal-details-content p {
+    padding: 1rem 2rem;
+}
+
+.details-close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.detail-title {
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.detail-price {
+    background: #fff;
+    font-weight: 600;
+    color: var(--tenne-tawny);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.meal-details-content img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 2rem auto;
+    display: block;
+}
+
+
 /* media queries */
 
 @media screen and (min-width: 600px) {
@@ -166,6 +242,9 @@ body {
     }
     .meal-item {
         margin: 0;
+    }
+    .meal-details {
+        width: 700px;
     }
 }
 
