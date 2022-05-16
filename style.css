@@ -146,3 +146,31 @@ body {
 .take-btn:hover {
     background: var(--tenne-tawny-dark);
 }
+
+
+/* media queries */
+
+@media screen and (min-width: 600px) {
+    .meal-search {
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #meal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .meal-item {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #meal {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
