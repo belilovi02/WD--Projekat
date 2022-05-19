@@ -1,36 +1,33 @@
-const searchBtn = document.getElementById('search-btn');
-const mealList = document.getElementById('meal');
-const mealDetailsContent = document.querySelector('.meal-details-content');
-const detailsCloseBtn = document.getElementById('details-close-btn');
+{
+    /* <div class="meal-details-content">
+                        <h2 class="detail-title">Ime obroka</h2>
+                        <p class="detail-price">5.5</p>
+                        <img src="food.jpg" alt="food">
+                    </div> */
+}
+fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        renderFoods(data);
+    })
 
-//event listeners
+const renderFoods = (foods) => {
+    const foodsRow = document.getElementById('foods-row');
 
-searchBtn.addEventListener('click', getMealList);
+    let resultHtml = '';
 
-function getMealList() {
-    let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`, {
-            method: 'GET',
-        })
-        .then(response => response.json())
-        .then(data => {
-            /*let html = "";
-             if (data.Food) {
-                 data.Food.forEach(food => {
-                     html += `
-                         <div class="meal-item" data-id="${food.id}" >
-                             <div class="meal-img">
-                                 <img src="${food.imageUrl}" alt="food">
-                             </div>
-                             <div class="meal-name">
-                                 <h3>${food.name}</h3>
-                                 <a href="#" class="take-btn">Detalji</a>
-                             </div>
-                         </div>
-                     `;
-                 });  
-             }  */
-            // mealList.innerHTML = html;
-            console.log(data);
-        });
+    foods.forEach(food => {
+        resultHtml += `
+            <div class="card food-item">
+                <img src="${food.imageUrl}" class="card-img food-img" alt="...">
+                <div class="card-body">
+                    <h3 class="food-name">${food.name}</h3>
+                    <p class="food-price">Price: ${food.price}KM</p>
+                </div>
+            </div>`;
+    });
+
+    foodsRow.innerHTML = resultHtml;
 }
