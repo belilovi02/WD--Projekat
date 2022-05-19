@@ -32,7 +32,7 @@ const renderFoods = (foods) => {
     foodsRow.innerHTML = resultHtml;
 }
 
-function editFood(foodID) {
+const editFood = (foodID) => {
 
     const food = foods.find(food => food.id === foodID);
     const foodFormID1 = document.getElementById("food-id-1");
@@ -47,7 +47,7 @@ function editFood(foodID) {
 
 }
 
-function putFood() {
+const putFood = () => {
     foodFormID1 = document.getElementById("food-id-1").value;
     foodFormName1 = document.getElementById("food-name-1").value;
     foodFormPrice1 = document.getElementById("food-price-1").value;
@@ -55,7 +55,7 @@ function putFood() {
 
     fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`, {
             method: 'PUT',
-            headers: new Headers({ 'content-type': 'applicatio/json' }),
+            headers: new Headers({ 'content-type': 'application/json' }),
             body: JSON.stringify({
                 id: foodFormID1,
                 name: foodFormName1,
@@ -65,5 +65,5 @@ function putFood() {
         })
         .then(response => {
             console.log(response);
-        });
+        })
 }
