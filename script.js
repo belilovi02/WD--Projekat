@@ -5,11 +5,14 @@
                         <img src="food.jpg" alt="food">
                     </div> */
 }
+
+let foods = [];
 fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`)
-    .then(response => {
-        return response.json();
+    .then(res => {
+        return res.json();
     })
     .then(data => {
+        foods = data;
         renderFoods(data);
     })
 
@@ -25,42 +28,40 @@ const renderFoods = (foods) => {
                 <div class="card-body">
                     <h3 class="food-name">${food.name}</h3>
                     <p class="food-price">Cijena: ${food.price}KM</p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever = "@getbootstrap" onclick="fillData(${food.id})">EDIT</button>
+                    <button type="button" onclick="fillEditData(${food.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
                 </div>
             </div>`;
     });
     foodsRow.innerHTML = resultHtml;
 }
 
-const fillData = (foodID) => {
+const fillEditData = (foodId) => {
+    const food = foods.find(food => food.id === foodId);
+    const foodFormId = document.getElementById('food-id-1');
+    const foodFormName = document.getElementById('food-name-1');
+    const foodFormImage = document.getElementById('food-imageUrl-1');
+    const foodFormPrice = document.getElementById('food-price-1');
 
-    const food = foods.find(food => food.id === foodID);
-    const foodFormID1 = document.getElementById("food-id-1");
-    const foodFormName1 = document.getElementById("food-name-1");
-    const foodFormPrice1 = document.getElementById("food-price-1");
-    const foodFormImageUrl1 = document.getElementById("food-imageUrl-1");
-
-    foodFormID1.value = food.id;
-    foodFormName1.value = food.name;
-    foodFormPrice1.value = food.price;
-    foodFormImageUrl1.value = food.imageUrl;
-
+    foodFormId.value = food.id;
+    foodFormName.value = food.name;
+    foodFormImage.value = food.imageUrl;
+    foodFormPrice.value = food.price;
 }
 
-const putFood = () => {
-    foodFormID1 = document.getElementById("food-id-1").value;
-    foodFormName1 = document.getElementById("food-name-1").value;
-    foodFormPrice1 = document.getElementById("food-price-1").value;
-    foodFormImageUrl1 = document.getElementById("food-imageUrl-1").value;
+const editFood = () => {
+    const foodFormId = document.getElementById('food-id-1').value;
+    const foodFormName = document.getElementById('food-name-1').value;
+    const foodFormImage = document.getElementById('food-imageUrl-1').value;
+    const foodFormPrice = document.getElementById('food-price-1').value;
 
     fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`, {
             method: 'PUT',
             headers: new Headers({ 'content-type': 'application/json' }),
             body: JSON.stringify({
-                id: foodFormID1,
-                name: foodFormName1,
-                price: foodFormPrice1,
-                imageUrl: foodFormImageUrl1
+                id: foodFormId,
+                name: foodFormName,
+                imageUrl: foodFormImage,
+                price: foodFormPrice
             })
         })
         .then(res => {
