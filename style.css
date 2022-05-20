@@ -23,7 +23,7 @@ body {
 }
 
 .food-item {
-    margin: 2rem 0;
+    margin: 2rem 2rem;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 21px -12px rgb(0, 0, 0, 0.79);
@@ -31,18 +31,28 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 2rem 0;
+    width: 350px;
+    height: 350px;
 }
 
 .food-img {
-    width: 100%;
+    margin-bottom: 0;
+    height: 200px;
     display: block;
     border-radius: 5%;
-    margin: 2rem auto;
+    align-content: center;
     display: block;
+    padding: 0.2rem 0.5rem;
+}
+
+.card-body {
+    padding: 0;
 }
 
 .food-name {
-    padding: 1.5rem 0.5rem;
+    padding: 0.2rem 0.5rem;
+    margin: 2px 0;
+    position: relative;
 }
 
 .food-price {
@@ -54,16 +64,162 @@ body {
     border-radius: 0.3rem;
 }
 
+.add-delete {
+    justify-content: right;
+}
+
+.container-foods {
+    width: 80%;
+    justify-items: center;
+}
+
+.header {
+    border-bottom: 3px solid #dc0000;
+    background-color: #fcfcfc;
+    position: fixed;
+    z-index: 99999;
+    width: 100vw;
+}
+
+.social-media-icons {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.social-media-icons ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.social-media-icons ul li a img {
+    height: 24px;
+    width: 24px;
+    margin: 5px;
+}
+
+.page {}
+
+.footer {}
+
+.page .content {
+    margin: 0px auto;
+    width: 1000px;
+    padding: 0px 10px;
+    padding-top: 110px;
+    min-height: calc(100vh);
+}
+
+.page:last-child .content {
+    min-height: calc(100vh - 120px);
+}
+
+.column {
+    border: 1px solid black;
+    width: 1200px;
+    margin: 0px auto;
+}
+
+.page .column {
+    height: 100vh;
+}
+
+#logo-social {
+    display: flex;
+}
+
+#logo-holder {
+    flex-grow: 1;
+}
+
+#logo-holder img {
+    padding: 0px 2px;
+    height: 40px;
+    width: 205px;
+}
+
+#social-holder {
+    flex-grow: 1;
+    text-align: right;
+}
+
+#social-holder a {
+    text-decoration: none;
+}
+
+#social-holder a img {
+    padding: 1px 2px;
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
+
+#main-menu {
+    display: flex;
+}
+
+#main-menu a {
+    flex-grow: 1;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    color: rgb(218, 0, 0);
+    text-decoration: none;
+    transition: 450ms;
+}
+
+#main-menu a:hover,
+#main-menu a.active {
+    background: rgb(218, 0, 0);
+    color: white;
+}
+
+#pocetna {
+    text-align: center;
+    color: white;
+    background: url('./slike/istockphoto-923041870-170667a.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#pocetna h1 {
+    font-size: 56pt;
+    font-style: italic;
+    margin-top: 100px;
+    padding-top: 80px;
+}
+
+.dark-box {
+    background-color: #3b3939ab;
+    border: 2px solid rgba(255, 255, 255, 0.808);
+    border-style: groove;
+    font-size: 24pt;
+    padding: 40px;
+}
+
+#usluge {
+    background: url('./slike/floral-wallpaper-inside-morning-eatery-900x500.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#karijera {
+    background: url('./slike/thumbs_workshop-apd-taka-02-refer-0616.jpg.770x0_q95.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#proizvodi {
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}
+
 
 /* media queries */
 
-@media screen and (min-width: 600px) {
-    .meal-search {
-        width: 540px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
+@media screen and (min-width: 600px) {}
 
 @media screen and (min-width: 768px) {
     #foods-row {
@@ -79,5 +235,11 @@ body {
 @media screen and (min-width: 992px) {
     #foods-row {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1001px) {
+    .column {
+        width: auto;
     }
 }
