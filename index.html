@@ -11,11 +11,72 @@
 </head>
 
 <body>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-d" data-bs-whatever="@getbootstrap">Delete food</button>
+    <div class="modal fade" id="exampleModal-d" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete food</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="food-id-d" class="form-label">Food ID:</label>
+                            <input type="text" class="form-control" id="food-id-d">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteFood()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@getbootstrap">Add food</button>
+
+    <!-- Modal for adding new food -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add food</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="food-id" class="form-label">Food ID:</label>
+                            <input type="text" class="form-control" id="food-id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="food-name-1" class="form-label">Food name:</label>
+                            <input type="text" class="form-control" id="food-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="food-price" class="form-label">Food price:</label>
+                            <input type="text" class="form-control" id="food-price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="food-imageUrl" class="form-label">Food image URL:</label>
+                            <input type="text" class="form-control" id="food-imageUrl">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addFood()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container w-100 h-100s">
         <div class="row" id="foods-row">
 
         </div>
-        <!-- Modal -->
+        <!-- Modal for edit food -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -26,7 +87,7 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="food-id" class="form-label">Food ID:</label>
+                                <label for="food-id-1" class="form-label">Food ID:</label>
                                 <input type="text" class="form-control" id="food-id-1">
                             </div>
                             <div class="mb-3">
