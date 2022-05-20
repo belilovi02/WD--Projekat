@@ -25,14 +25,14 @@ const renderFoods = (foods) => {
                 <div class="card-body">
                     <h3 class="food-name">${food.name}</h3>
                     <p class="food-price">Cijena: ${food.price}KM</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="editFood(${food.id})">EDIT</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever = "@getbootstrap" onclick="fillData(${food.id})">EDIT</button>
                 </div>
             </div>`;
     });
     foodsRow.innerHTML = resultHtml;
 }
 
-const editFood = (foodID) => {
+const fillData = (foodID) => {
 
     const food = foods.find(food => food.id === foodID);
     const foodFormID1 = document.getElementById("food-id-1");
@@ -63,7 +63,7 @@ const putFood = () => {
                 imageUrl: foodFormImageUrl1
             })
         })
-        .then(response => {
-            console.log(response);
+        .then(res => {
+            console.log(res);
         })
 }
