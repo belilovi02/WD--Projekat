@@ -68,3 +68,33 @@ const editFood = () => {
             console.log(res);
         })
 }
+const addFood = () => {
+    const foodFormId = document.getElementById('food-id').value;
+    const foodFormName = document.getElementById('food-name').value;
+    const foodFormImage = document.getElementById('food-imageUrl').value;
+    const foodFormPrice = document.getElementById('food-price').value;
+
+    fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`, {
+            method: 'POST',
+            headers: new Headers({ 'content-type': 'application/json' }),
+            body: JSON.stringify({
+                id: foodFormId,
+                name: foodFormName,
+                imageUrl: foodFormImage,
+                price: foodFormPrice
+            })
+        })
+        .then(res => {
+            console.log(res);
+        })
+}
+
+const deleteFood = () => {
+    const id = document.getElementById('food-id-d').value;
+    fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => {
+            console.log(res);
+        })
+}
