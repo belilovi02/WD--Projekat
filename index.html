@@ -33,6 +33,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-brand">Admin options</button>
+                                <div class="dropdown-content">
+                                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@getbootstrap">Add food</a>
+                                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal-d" data-bs-whatever="@getbootstrap">Delete food</a>
+
+                                </div>
+                            </div>
+
+
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -63,10 +75,7 @@
             <div class="row" id="foods-row">
             </div>
 
-            <div class="add-delete">
-                <button type="button" class="btn btn-primary btn-add-food" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@getbootstrap">Add food</button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-d" data-bs-whatever="@getbootstrap">Delete food</button>
-            </div>
+
             <!-- Delete food section -->
             <div class="modal fade" id="exampleModal-d" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

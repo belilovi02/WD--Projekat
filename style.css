@@ -57,7 +57,7 @@
     }
     
     .navbar .nav-link {
-        font-size: 15px;
+        font-size: 17px;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
@@ -68,7 +68,7 @@
     /* CSS for Home section */
     
     #home {
-        background: linear-gradient(rgba(17, 36, 90, 0.8), rgba(17, 36, 90, 0.8)), url('./slike/istockphoto-923041870-170667a.jpg');
+        background: linear-gradient(rgba(17, 36, 90, 0.344), rgba(17, 36, 90, 0.294)), url('./slike/istockphoto-923041870-170667a.jpg');
         min-height: 100vh;
         background-size: cover;
         background-position: center;
@@ -87,6 +87,38 @@
         margin: 18px auto;
     }
     /* CSS for buttons */
+    
+    .dropdown {
+        display: inline-block;
+        position: relative;
+        background-color: #ffffffbc
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        width: 100%;
+        overflow: auto;
+        background-color: #ffffff;
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content .nav-link {
+        display: block;
+        color: #000000;
+        padding: 5px;
+        text-decoration: none;
+    }
+    
+    .dropdown-content a:hover {
+        color: #ffffff;
+        background-color: #e93b81af;
+        cursor: pointer;
+    }
     
     .btn {
         font-weight: 700;
