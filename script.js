@@ -1,11 +1,3 @@
-{
-    /* <div class="meal-details-content">
-                        <h2 class="detail-title">Ime obroka</h2>
-                        <p class="detail-price">5.5</p>
-                        <img src="food.jpg" alt="food">
-                    </div> */
-}
-
 let foods = [];
 fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food`)
     .then(res => {
@@ -64,8 +56,8 @@ const editFood = () => {
                 price: foodFormPrice
             })
         })
-        .then(res => {
-            console.log(res);
+        .then(response => {
+            console.log(response);
         })
 }
 const addFood = () => {
@@ -84,8 +76,8 @@ const addFood = () => {
                 price: foodFormPrice
             })
         })
-        .then(res => {
-            console.log(res);
+        .then(response => {
+            console.log(response);
         })
 }
 
@@ -94,7 +86,7 @@ const deleteFood = () => {
     fetch(`https://ptf-web-dizajn-2022.azurewebsites.net/api/Food/${id}`, {
             method: 'DELETE'
         })
-        .then(res => {
-            console.log(res);
+        .then(response => {
+            console.log(response);
         })
 }
