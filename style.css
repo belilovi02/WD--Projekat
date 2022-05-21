@@ -283,14 +283,14 @@
     }
     /* media queries */
     
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 767px) and (min-width: 319px) {
         #foods-row {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 1rem;
+            gap: 2rem;
         }
         .food-item {
-            margin: 0;
+            margin: 2px;
         }
     }
     
