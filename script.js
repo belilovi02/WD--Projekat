@@ -19,8 +19,10 @@ const renderFoods = (foods) => {
                 <img src="${food.imageUrl}" class="card-img food-img" alt="...">
                 <div class="card-body">
                     <h3 class="food-name">${food.name}</h3>
-                    <p class="food-price">Cijena: ${food.price}KM</p>
-                    <button type="button" onclick="fillEditData(${food.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+                    <div class="d-flex justify-content-between">
+                        <p class="food-price">Cijena: ${food.price}KM</p>
+                        <button type="button" onclick="fillEditData(${food.id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+                    </div>
                 </div>
             </div>`;
     });
