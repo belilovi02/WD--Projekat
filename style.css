@@ -288,6 +288,7 @@
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 2rem;
+            justify-content: space-between;
         }
         .food-item {
             margin: 2px;
@@ -299,6 +300,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
+            justify-content: space-between;
         }
         .food-item {
             margin: 0;
